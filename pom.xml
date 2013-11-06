@@ -142,9 +142,9 @@
      -->
 
     <scm>
-        <connection>scm:git:https://github.com/codjo/codjo.git</connection>
-        <developerConnection>scm:git:https://github.com/codjo/codjo.git</developerConnection>
-        <url>https://github.com/codjo/codjo</url>
+        <connection>scm:git:https://github.com/codjo/maven-codjo-plugin.git</connection>
+        <developerConnection>scm:git:https://github.com/codjo/maven-codjo-plugin.git</developerConnection>
+        <url>https://github.com/codjo/maven-codjo-plugin</url>
     </scm>
 
 </project>
