@@ -1,0 +1,22 @@
+<project>
+    <!--<groupId>my-group</groupId>-->
+    <!--<artifactId>my-id</artifactId>-->
+    <!--<version>1.0-SNAPSHOT</version>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-codjo-plugin</artifactId>
+                <configuration>
+                    <!--<siteRenderer implementation="org.apache.maven.doxia.siterenderer.DefaultSiteRenderer"/>-->
+                    <siteRenderer implementation="net.codjo.maven.common.mock.RendererMock"/>
+                    <integrationPlansDirectory>
+                        ./target/test-classes/mojos/integrationPlans
+                    </integrationPlansDirectory>
+                    <resourcesDirectory>./target/test-classes/mojos</resourcesDirectory>
+                    <outputDirectory>./target/report</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

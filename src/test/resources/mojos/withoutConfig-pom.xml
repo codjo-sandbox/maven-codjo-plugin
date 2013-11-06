@@ -1,0 +1,17 @@
+<project>
+    <!--<groupId>my-group</groupId>-->
+    <!--<artifactId>my-id</artifactId>-->
+    <!--<version>1.0-SNAPSHOT</version>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-codjo-plugin</artifactId>
+                <configuration>
+                    <project implementation="net.codjo.maven.common.mock.MavenProjectMock"/>
+                    <ideaConfigFile>/unknown/path/point/to/inexistantFile.xml</ideaConfigFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

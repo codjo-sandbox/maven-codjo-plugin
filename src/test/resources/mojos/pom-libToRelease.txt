@@ -1,0 +1,5 @@
+lib mad
+lib test
+libmaven common
+plugin database
+plugin surefire-report

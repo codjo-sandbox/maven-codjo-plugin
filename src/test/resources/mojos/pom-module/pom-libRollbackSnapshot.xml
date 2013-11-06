@@ -1,0 +1,30 @@
+<project>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.codjo.maven</groupId>
+                <artifactId>codjo-maven-common</artifactId>
+                <version>1.6-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>net.codjo.maven.mojo</groupId>
+                    <artifactId>maven-database-plugin</artifactId>
+                    <version>1.12-SNAPSHOT</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>init</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

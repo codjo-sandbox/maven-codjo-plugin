@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- insert_pos enum -->
+    <xs:simpleType name="insert_pos">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="before"/>
+            <xs:enumeration value="after"/>
+            <xs:enumeration value="under"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- list of insert TAG -->
+    <xs:complexType name="insert_list">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="insert"/>
+            <xs:element ref="attribute"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- position TAG -->
+    <xs:element name="position" type="insert_pos"/>
+
+    <!-- content TAG -->
+    <xs:element name="content" type="xs:string"/>
+
+    <!-- name TAG -->
+    <xs:element name="name" type="xs:string"/>
+
+    <!-- comment TAG -->
+    <xs:element name="comment" type="xs:string"/>
+
+    <!-- insert TAG -->
+    <xs:element name="insert">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="path" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="position" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="content" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- arrtibute TAG -->
+    <xs:element name="attribute">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="path" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="content" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- iws ipr iml TAGs -->
+    <xs:element name="iws" type="insert_list"/>
+    <xs:element name="ipr" type="insert_list"/>
+
+    <!-- ROOT : feature tag -->
+    <xs:element name="feature">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="comment"/>
+                <xs:element ref="iws" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="ipr" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

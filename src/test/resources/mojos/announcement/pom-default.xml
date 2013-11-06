@@ -1,0 +1,28 @@
+<project>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-codjo-plugin</artifactId>
+                <configuration>
+                    <project implementation="net.codjo.maven.common.mock.MavenProjectMock"/>
+                    <localRepository implementation="net.codjo.maven.common.mock.ArtifactRepositoryMock"/>
+                    <repositoryMetadataManager
+                          implementation="net.codjo.maven.mojo.codjo.RepositoryMetadataManagerMock"/>
+                    <inputHandler implementation="net.codjo.maven.common.mock.InputHandlerMock"/>
+                    <settings implementation="org.apache.maven.settings.Settings"/>
+
+                    <smtpServer>localhost</smtpServer>
+                    <smtpPort>89</smtpPort>
+
+                    <confluenceUrl>http://wd-confluence/confluence</confluenceUrl>
+                    <confluenceUser>user_dev</confluenceUser>
+                    <confluencePassword>user_dev</confluencePassword>
+                    <confluenceSpaceKey>sandbox</confluenceSpaceKey>
+                    <confluencePage>SendAnnouncementToTeamsMojo</confluencePage>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,16 @@
+<feature xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../schema/features.xsd">
+    <name>Configuration svn</name>
+    <comment>
+        Interdit l'upgrade de la version de subversion.
+    </comment>
+    <iws>
+        <insert>
+            <path>//project/component[@name='SvnConfiguration']</path>
+            <position>under</position>
+            <content>
+                <![CDATA[<upgradeMode>none</upgradeMode>]]>
+            </content>
+        </insert>
+    </iws>
+</feature>

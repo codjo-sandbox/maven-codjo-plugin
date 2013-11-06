@@ -1,0 +1,15 @@
+<feature xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../schema/features.xsd">
+    <name>Configuration git</name>
+    <comment>
+        Bug sur la gestion de git. Le ACTIVE_VCS_NAME est tiré de la balise scm du pom (git en minuscule), mais intelliJ
+        ne le reconnais que si c'est 'Git'.
+    </comment>
+    <iws>
+        <attribute>
+            <path>//project/component[@name='VcsManagerConfiguration']/option[@name='ACTIVE_VCS_NAME' and @value='git']</path>
+            <name>value</name>
+            <content>Git</content>
+        </attribute>
+    </iws>
+</feature>

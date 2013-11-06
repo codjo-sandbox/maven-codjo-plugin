@@ -1,0 +1,22 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>my-group</groupId>
+    <artifactId>my-id-glue</artifactId>
+    <version>SNAPSHOT</version>
+
+    <name>One project Glue</name>
+    <url/>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module/>
+        <module>../../../../sam</module>
+        <module>../../../../red</module>
+        <module>../../../lib/codjo-control</module>
+        <module>../../../lib/codjo-imports</module>
+        <module>../maven-codjo-plugin</module>
+        <module>../maven-datagen-plugin</module>
+    </modules>
+</project>

@@ -1,0 +1,17 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>my-group</groupId>
+    <artifactId>my-id-glue</artifactId>
+    <version>SNAPSHOT</version>
+
+    <name>One project Glue</name>
+    <url/>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module/>
+        <module>../codjo/lib/codjo-control</module>
+    </modules>
+</project>

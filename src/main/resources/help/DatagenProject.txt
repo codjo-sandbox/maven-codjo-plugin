@@ -1,0 +1,16 @@
+Commandes Disponibles
+---------------------
+    mvn datagen:generate
+        Lancement de la generation
+        Options :
+            * vmArguments : arguments passe a la JVM dans laquelle sera faite la generation.
+              Valeur par défaut : -Xms256m -Xmx512m -XX:MaxPermSize=256m
+
+    mvn datagen:package-client
+        Génère le jar utilise par le client
+
+    mvn datagen:package-server
+        Génère le jar utilise par le serveur
+
+    mvn datagen:package-sql
+        Génère le jar SQL

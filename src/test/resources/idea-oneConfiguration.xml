@@ -1,0 +1,14 @@
+<idea>
+    <execConfiguration>
+        <name>Client GABI(AutoLogin)</name>
+        <description>Lance le client Gabi en login automatique</description>
+        <execClass>net.codjo.gabi.gui.GabiMain</execClass>
+        <parameter>GABI GABIUSER localhost 15700</parameter>
+        <vmParameter>-Dlog4j.configuration=...</vmParameter>
+        <workdir>./application/client</workdir>
+        <module>gabi-client</module>
+    </execConfiguration>
+    <defaultJUnitConfiguration>
+        <vmParameter>-Djava.library.path=...</vmParameter>
+    </defaultJUnitConfiguration>
+</idea>

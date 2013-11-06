@@ -1,0 +1,42 @@
+Commandes Disponibles
+---------------------
+    mvn install -Dprocess=integration [options]
+        Lance le process d'integration des tests release (cad execution des cibles ci-dessous)
+
+    mvn test-release:start-server [-Dspawn=false] [options]
+        Lance le serveur dans un process separe (sauf avec l'option -Dspawn=false)
+
+    mvn test-release:stop-server [options]
+        Stoppe le serveur
+
+    mvn test-release:run [options]
+        Lance les tests release
+
+    mvn test-release:deliver-batch [options]
+        Deploiement du batch (obligatoire avant 'run')
+
+    mvn test-release:deliver-server [options]
+        Deploiement du server (obligatoire avant 'run')
+
+Options
+-------
+
+    -Ddatabase=integration
+        Utilisation de la BD integration
+
+    -Dserver=integration
+        Utilisation du serveur d'integration
+
+    -Dtest=<chemin vers un répertoire ou un fichier de test>
+        Lancement d'un test en particulier. Dans ce cas le serveur n'est pas stoppé après le test.
+
+    -Dcoverage=true
+        Activation du calcul de couverture de code par les tests release.
+        Pour generer le rapport il suffit d'executer : mvn test-release:coverage-report -Dcoverage=true
+
+ATTENTION
+---------
+
+Les tests-release sont lance en utilisant les livrables produit par un 'mvn install -Dprocess=integration'
+sur le projet racine.
+

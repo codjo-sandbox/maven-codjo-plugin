@@ -1,0 +1,3 @@
+#foreach ($exec in $idea.configurationExec)
+${exec.name} / ${exec.execClass}
+#end

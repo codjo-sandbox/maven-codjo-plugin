@@ -1,0 +1,7 @@
+lib datagen
+lib mad
+lib test
+libmaven common
+libmaven enforcer
+plugin database
+plugin surefire-report

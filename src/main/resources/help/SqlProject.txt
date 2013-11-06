@@ -1,0 +1,14 @@
+Commandes Disponibles
+---------------------
+    mvn database:init
+        Initialise la base de donnees.
+
+    mvn database:drop
+        Supprime les objets de la base de donnees.
+
+    mvn database:compare-from-prod [-Dmaven.database.versionInProduction=<tag svn>]
+        Applique le delta a la base et compare avec la version de developpement courante.
+        NB : La version courante doit etre deja installee.
+        Options :
+            * maven.database.versionInProduction : surcharge la version specifiee dans le
+                                                   pom racine de l'application.

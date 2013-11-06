@@ -1,0 +1,37 @@
+<feature xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../schema/features.xsd">
+    <name>liste de configs d'execution</name>
+    <comment>
+        Liste de configurations d'execution.
+    </comment>
+    <iws>
+        <insert>
+            <path>//project/component[@name='PropertiesComponent']</path>
+            <position>under</position>
+            <content>
+                <![CDATA[
+                    <property name="RunManagerConfig.compileBeforeRunning" value="true" />
+                    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
+                ]]>
+            </content>
+        </insert>
+        <insert>
+            <path>//project/component[@name='RunManager']</path>
+            <position>under</position>
+            <content>
+                <![CDATA[
+#foreach ($exec in $idea.configurationExec)
+            <configuration name="${exec.name}" type="Application" default="false" selected="true">
+              <option name="MAIN_CLASS_NAME" value="${exec.execClass}" />
+              <option name="VM_PARAMETERS" value='${exec.vmParameter}' />
+              <option name="PROGRAM_PARAMETERS" value='${exec.parameter}' />
+              <option name="WORKING_DIRECTORY" value="${exec.workdir}" />
+              <module name="${exec.module}" />
+            </configuration>
+#end
+                ]]>
+            </content>
+        </insert>
+    </iws>
+    <ipr/>
+</feature>

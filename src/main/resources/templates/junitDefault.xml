@@ -1,0 +1,29 @@
+<feature xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../schema/features.xsd">
+    <name>JUnit default</name>
+    <comment>
+        Configure des cibles executant les tests unitaires JUnit. Utilisation de la strat�gie des logs de
+        l'utilisateur.
+    </comment>
+    <iws>
+        <insert>
+            <path>//project/component[@name='RunManager']/configuration[@factoryName='JUnit' and @default='true']</path>
+            <position>under</position>
+            <content>
+                <![CDATA[
+              #if ( ${idea.defaultJUnitConfiguration.vmParameter} )
+                <option name="VM_PARAMETERS" value='${idea.defaultJUnitConfiguration.vmParameter}' />
+              #else
+                <option name="VM_PARAMETERS" value='-Dlog4j.configuration=&quot;file:${user.home}\\log4j.properties&quot;' />
+              #end
+              #if ( ${idea.defaultJUnitConfiguration.parameter} )
+                <option name="PROGRAM_PARAMETERS" value='${idea.defaultJUnitConfiguration.parameter}' />
+              #end
+              #if ( ${idea.defaultJUnitConfiguration.workdir} )
+                <option name="WORKING_DIRECTORY" value="${idea.defaultJUnitConfiguration.workdir}" />
+              #end
+                ]]>
+            </content>
+        </insert>
+    </iws>
+</feature>

@@ -1,0 +1,22 @@
+Commandes Disponibles
+---------------------
+    mvn [deploy|install|clean]
+        Deploiement, installation ou nettoyage du projet
+
+    idea [clean|help]
+        Creation du projet IntelliJ Idea
+
+    mvn codjo:switch-to-snapshot [-Dlib=...|-Dplugin=...]
+        Ouverture de chantier dans le super-pom
+
+    mvn codjo:rollback-snapshot [-Dlib=...|-Dplugin=...]
+        Annulation d'une ouverture de chantier dans le super-pom
+
+Options
+-------
+
+    -Dlib=...
+        Librairie concernee. (ex. -Dlib=workflow)
+
+    -Dplugin=...
+        Plugin concerne. (ex. -Dplugin=codjo)

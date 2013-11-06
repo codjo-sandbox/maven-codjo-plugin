@@ -1,0 +1,23 @@
+<feature xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../schema/features.xsd">
+    <name>Configuration de la vue projet</name>
+    <comment>
+        Désactive l'affichage des librairies externes et des modules dans la vue packages.
+    </comment>
+    <iws>
+        <insert>
+            <path>//project</path>
+            <position>under</position>
+            <content>
+                <![CDATA[
+                    <component name="ProjectView">
+                        <navigator>
+                            <showModules PackagesPane="false" />
+                            <showLibraryContents PackagesPane="false" />
+                        </navigator>
+                    </component>
+                ]]>
+            </content>
+        </insert>
+    </iws>
+</feature>

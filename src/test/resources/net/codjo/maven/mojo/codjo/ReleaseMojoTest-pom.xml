@@ -1,0 +1,18 @@
+<project>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-codjo-plugin</artifactId>
+                <configuration>
+                    <project implementation="net.codjo.maven.common.mock.MavenProjectMock"/>
+                    <inputHandler implementation="net.codjo.maven.common.mock.InputHandlerMock"/>
+                    <settings implementation="org.apache.maven.settings.Settings"/>
+                    <repositoryMetadataManager
+                          implementation="net.codjo.maven.mojo.codjo.RepositoryMetadataManagerMock"/>
+                    <connectionUrl>scm:svn:http://bd-subversion/myProject/trunk</connectionUrl>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

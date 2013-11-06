@@ -1,0 +1,16 @@
+Commandes Disponibles
+---------------------
+    mvn [deploy|install|clean]
+        Deploiement, installation ou nettoyage du projet
+
+    idea [clean|help] [-Dappli=...] [-Dlib=...] [-Dplugin=...]
+        Creation du projet IntelliJ Idea
+
+        -Dappli=...
+            Applications a lier au projet. (ex. -Dappli=sam)
+
+        -Dlib=...
+            Librairies a lier au projet. (ex. -Dlib=workflow,imports)
+
+        -Dplugin=...
+            Plugins a lier au projet. (ex. -Dplugin=codjo,datagen)
