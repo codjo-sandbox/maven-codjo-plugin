@@ -98,10 +98,10 @@ public abstract class SwitchAbstractMojo extends ScmMojo implements CommitConfig
                                                                 "dependencies",
                                                                 "dependency"};
         public static String[] libInPluginTagsHierarchy = new String[]{"build", "pluginManagement",
-                                                                        "plugins",
-                                                                        "plugin",
-                                                                        "dependencies",
-                                                                        "dependency"};
+                                                                       "plugins",
+                                                                       "plugin",
+                                                                       "dependencies",
+                                                                       "dependency"};
         public static String[] pluginTagsHierarchy = new String[]{"build",
                                                                   "pluginManagement",
                                                                   "plugins",
@@ -109,5 +109,35 @@ public abstract class SwitchAbstractMojo extends ScmMojo implements CommitConfig
 
 
         public void printLog() throws MojoExecutionException, IOException;
+    }
+    protected static class VersionInfo {
+        private static final String AGI_SUFFIX = "-agi";
+
+        private boolean isAGI = false;
+        private final String version;
+
+
+        public VersionInfo(String version) {
+            if (version.endsWith(AGI_SUFFIX)) {
+                version = version.substring(0, version.length() - AGI_SUFFIX.length());
+                isAGI = true;
+            }
+            this.version = version;
+        }
+
+
+        public boolean isAGI() {
+            return isAGI;
+        }
+
+
+        public String getVersion() {
+            return version;
+        }
+
+
+        public String getSuffix() {
+            return isAGI() ? AGI_SUFFIX : "";
+        }
     }
 }

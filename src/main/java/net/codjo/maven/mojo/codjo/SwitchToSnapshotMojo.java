@@ -71,10 +71,11 @@ public class SwitchToSnapshotMojo extends SwitchAbstractMojo {
             throw new MojoFailureException("Deja en SNAPSHOT");
         }
 
-        int separatorIndex = globalVersion.lastIndexOf('.') + 1;
-        int version = Integer.valueOf(
-              globalVersion.substring(separatorIndex, globalVersion.length())).intValue();
-        return globalVersion.substring(0, separatorIndex) + (version + 1) + "-SNAPSHOT";
+        VersionInfo versionInfo = new VersionInfo(globalVersion);
+        int separatorIndex = versionInfo.getVersion().lastIndexOf('.') + 1;
+        String majorVersion = versionInfo.getVersion().substring(0, separatorIndex);
+        int minorVersion = Integer.valueOf(versionInfo.getVersion().substring(separatorIndex)).intValue();
+        return majorVersion + (minorVersion + 1) + versionInfo.getSuffix() + "-SNAPSHOT";
     }
 
 

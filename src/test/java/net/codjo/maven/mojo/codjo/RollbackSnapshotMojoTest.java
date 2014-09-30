@@ -40,10 +40,10 @@ public class RollbackSnapshotMojoTest extends SwitchLibTestCase {
         mojo.setLib("database");
         mojo.execute();
 
-        XmlUtil.assertEquivalent(loadContent(new File(PATH + "pom-libRollbackSnapshot-libInPluginManagement.etalon.xml")),
+        XmlUtil.assertEquivalent(loadContent(new File(
+              PATH + "pom-libRollbackSnapshot-libInPluginManagement.etalon.xml")),
                                  loadContent(pomFile));
     }
-
 
 //    public void test_execute_swichLibAndPlugin_inChild() throws Exception {
 //        mojo.setLib("maven");
@@ -74,6 +74,12 @@ public class RollbackSnapshotMojoTest extends SwitchLibTestCase {
     }
 
 
+    public void test_findAGIReleaseVersion() throws Exception {
+        assertEquals("2.55-agi", mojo.findReleaseVersion("2.56-agi-SNAPSHOT"));
+        assertEquals("2.9-agi", mojo.findReleaseVersion("2.10-agi-SNAPSHOT"));
+    }
+
+
     public void test_computeNewVersion_alreadySnapshot() throws Exception {
         try {
             mojo.findReleaseVersion("2.55");
@@ -98,7 +104,6 @@ public class RollbackSnapshotMojoTest extends SwitchLibTestCase {
             assertEquals(loadContent(new File(PATH + "pom-libRollbackSnapshot.xml")), loadContent(pomFile));
         }
     }
-
 
 //    public void test_execute_badPluginName() throws Exception {
 //        try {

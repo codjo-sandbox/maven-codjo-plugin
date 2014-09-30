@@ -66,15 +66,18 @@ public class RollbackSnapshotMojo extends SwitchAbstractMojo {
     }
 
 
-    public String findReleaseVersion(String globalVersion) throws MojoFailureException {
+    public String findReleaseVersion(final String globalVersion) throws MojoFailureException {
         if (!globalVersion.contains("-SNAPSHOT")) {
             throw new MojoFailureException("N'est pas en SNAPSHOT");
         }
 
         int separatorIndex = globalVersion.lastIndexOf('.') + 1;
         int endIndex = globalVersion.indexOf("-SNAPSHOT");
-        int version = Integer.valueOf(globalVersion.substring(separatorIndex, endIndex)).intValue();
-        return globalVersion.substring(0, separatorIndex) + (version - 1);
+        String majorVersion = globalVersion.substring(0, separatorIndex);
+        String minorVersionAndSuffix = globalVersion.substring(separatorIndex, endIndex);
+        VersionInfo versionInfo = new VersionInfo(minorVersionAndSuffix);
+        int minorVersion = Integer.valueOf(versionInfo.getVersion()).intValue();
+        return majorVersion + (minorVersion - 1) + versionInfo.getSuffix();
     }
 
 
@@ -161,7 +164,7 @@ public class RollbackSnapshotMojo extends SwitchAbstractMojo {
                 getLog().info("");
                 if (lib != null && !"".equals(lib.trim())) {
                     getLog().info("4 - Suppression du projet forke dans github :");
-                    getLog().info("     Aller a l'url: https://github.com/codjo-sandbox/codjo-"+lib +"/admin");
+                    getLog().info("     Aller a l'url: https://github.com/codjo-sandbox/codjo-" + lib + "/admin");
                     getLog().info("");
                 }
             }
