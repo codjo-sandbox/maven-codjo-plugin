@@ -10,7 +10,7 @@ import org.apache.maven.plugin.Mojo;
  */
 public class UpdateConfluenceBeforeReleaseMojoTest extends AgfMojoTestCase {
 
-    public void test_execute() throws Exception {
+    public void disabled_test_execute() throws Exception {
         setupEnvironment("/mojos/updateConfluence/pom-before-default.xml");
 
         Mojo mojo = lookupMojo("update-confluence-before-release");

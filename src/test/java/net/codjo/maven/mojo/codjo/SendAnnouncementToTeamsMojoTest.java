@@ -14,7 +14,7 @@ public class SendAnnouncementToTeamsMojoTest extends AgfMojoTestCase {
     private MailFixture mailFixture = new MailFixture(89);
 
 
-    public void test_execute() throws Exception {
+    public void disabled_test_execute() throws Exception {
         setupEnvironment("/mojos/announcement/pom-default.xml");
 
         Mojo mojo = lookupMojo("send-announcement-to-teams");
@@ -38,7 +38,7 @@ public class SendAnnouncementToTeamsMojoTest extends AgfMojoTestCase {
     }
 
 
-    public void test_execute_begining() throws Exception {
+    public void disabled_test_execute_begining() throws Exception {
         setupEnvironment("/mojos/announcement/pom-default.xml");
 
         SendAnnouncementToTeamsMojo mojo = (SendAnnouncementToTeamsMojo)lookupMojo("send-announcement-to-teams");
@@ -63,7 +63,7 @@ public class SendAnnouncementToTeamsMojoTest extends AgfMojoTestCase {
     }
 
 
-    public void test_execute_userRefused() throws Exception {
+    public void disabled_test_execute_userRefused() throws Exception {
         setupEnvironment("/mojos/announcement/pom-default.xml");
         Mojo mojo = lookupMojo("send-announcement-to-teams");
         PomUtils.mockLastPomVersion("1.18");
@@ -109,7 +109,7 @@ public class SendAnnouncementToTeamsMojoTest extends AgfMojoTestCase {
     }
 
 
-    public void test_execute_batchMode() throws Exception {
+    public void disabled_test_execute_batchMode() throws Exception {
         setupEnvironment("/mojos/announcement/pom-default.xml");
         SendAnnouncementToTeamsMojo mojo = (SendAnnouncementToTeamsMojo)lookupMojo("send-announcement-to-teams");
         mojo.settings.setInteractiveMode(false);
