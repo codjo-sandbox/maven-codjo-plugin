@@ -70,7 +70,7 @@
                 <plugin>
                     <groupId>net.codjo.maven.mojo</groupId>
                     <artifactId>maven-datagen-plugin</artifactId>
-                    <version>1.22-SNAPSHOT</version>
+                    <version>1.22-agi-SNAPSHOT</version>
                     <dependencies>
                         <dependency>
                             <groupId>net.codjo.database</groupId>

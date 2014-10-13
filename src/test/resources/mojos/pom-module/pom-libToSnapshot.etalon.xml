@@ -4,7 +4,7 @@
             <dependency>
                 <groupId>net.codjo.maven</groupId>
                 <artifactId>codjo-maven-common</artifactId>
-                <version>1.6-SNAPSHOT</version>
+                <version>1.6-agi-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -14,7 +14,7 @@
                 <plugin>
                     <groupId>net.codjo.maven.mojo</groupId>
                     <artifactId>maven-database-plugin</artifactId>
-                    <version>1.12-SNAPSHOT</version>
+                    <version>1.12-agi-SNAPSHOT</version>
                     <executions>
                         <execution>
                             <goals>

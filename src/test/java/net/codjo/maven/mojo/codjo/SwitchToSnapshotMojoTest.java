@@ -69,8 +69,8 @@ public class SwitchToSnapshotMojoTest extends SwitchLibTestCase {
 
 
     public void test_computeNewVersion() throws Exception {
-        assertEquals("2.56-SNAPSHOT", mojo.computeNewVersion("2.55"));
-        assertEquals("2.10-SNAPSHOT", mojo.computeNewVersion("2.9"));
+        assertEquals("2.56-agi-SNAPSHOT", mojo.computeNewVersion("2.55"));
+        assertEquals("2.10-agi-SNAPSHOT", mojo.computeNewVersion("2.9"));
     }
 
 

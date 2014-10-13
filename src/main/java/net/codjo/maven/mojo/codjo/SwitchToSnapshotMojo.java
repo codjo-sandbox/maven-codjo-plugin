@@ -75,7 +75,7 @@ public class SwitchToSnapshotMojo extends SwitchAbstractMojo {
         int separatorIndex = versionInfo.getVersion().lastIndexOf('.') + 1;
         String majorVersion = versionInfo.getVersion().substring(0, separatorIndex);
         int minorVersion = Integer.valueOf(versionInfo.getVersion().substring(separatorIndex)).intValue();
-        return majorVersion + (minorVersion + 1) + versionInfo.getSuffix() + "-SNAPSHOT";
+        return majorVersion + (minorVersion + 1) + VersionInfo.AGI_SUFFIX + "-SNAPSHOT";
     }
 
 

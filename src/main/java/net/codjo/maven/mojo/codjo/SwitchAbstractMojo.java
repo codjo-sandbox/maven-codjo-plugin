@@ -111,7 +111,7 @@ public abstract class SwitchAbstractMojo extends ScmMojo implements CommitConfig
         public void printLog() throws MojoExecutionException, IOException;
     }
     protected static class VersionInfo {
-        private static final String AGI_SUFFIX = "-agi";
+        protected static final String AGI_SUFFIX = "-agi";
 
         private boolean isAGI = false;
         private final String version;
