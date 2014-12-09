@@ -1,23 +1,18 @@
 package net.codjo.maven.mojo.codjo;
-import net.codjo.confluence.ConfluenceException;
-import net.codjo.confluence.ConfluenceServer;
-import net.codjo.confluence.ConfluenceSession;
-import net.codjo.confluence.Page;
 import net.codjo.maven.common.mock.AgfMojoTestCase;
-import org.apache.maven.plugin.Mojo;
 /**
  *
  */
 public class UpdateConfluenceAfterReleaseMojoTest extends AgfMojoTestCase {
     private String changelogFrameworkPageId;
-    private ConfluenceServer server;
+//    private ConfluenceServer server;
 
 
     public void test_empty() {
 
     }
 
-
+/*
     public void disabled_test_execute() throws Exception {
         setupEnvironment("/mojos/updateConfluence/pom-after-default.xml");
 
@@ -260,4 +255,5 @@ public class UpdateConfluenceAfterReleaseMojoTest extends AgfMojoTestCase {
         super.tearDown();
         server.logout();
     }
+*/
 }
